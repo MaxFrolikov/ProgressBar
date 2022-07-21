@@ -42,11 +42,14 @@ export const Input = () => {
 
 		switch (inputValue){
 			case 'name':
-				return newInput.name = value
+				newInput.name = value
+				return newInput
 			case 'startDate':
-				return newInput.startDate = value
+				newInput.startDate = value
+				return newInput
 			case 'finishDate':
-				return newInput.finishDate = value
+				newInput.finishDate = value
+				return newInput
 			default: return newInput
 		}
 	}
