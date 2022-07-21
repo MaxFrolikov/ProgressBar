@@ -12,7 +12,7 @@ export const reducer = (state = defaultState, action) => {
 		case REMOVE_BAR:
 			return {...state, barList: [...state.barList.filter(bar => bar.id !== action.payload)]}
 		default:
-			return state
+			return {...state}
 	}
 }
 

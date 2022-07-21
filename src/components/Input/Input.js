@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {addBarAction} from "../../store/reducer";
+
 import {
 	Block,
 	Article,
@@ -13,7 +14,7 @@ import {
 export const Input = () => {
 
 	const dispatch = useDispatch()
-	const defaultUserInput = {
+	const initialUserInput = {
 		name: '',
 		startDate: '',
 		finishDate: '',
@@ -21,7 +22,7 @@ export const Input = () => {
 
 	console.log()
 
-	const [userInput, setUserInput] = useState(defaultUserInput)
+	const [userInput, setUserInput] = useState(initialUserInput)
 
 	const bar = {
 		name: userInput.name ? userInput.name : 'New Progress Bar',
@@ -33,20 +34,28 @@ export const Input = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		dispatch(addBarAction(bar))
-		setUserInput(defaultUserInput)
+		setUserInput(initialUserInput)
+	}
+
+	const updateInput = (inputValue, value) => {
+		const newInput = {...userInput}
+
+		switch (inputValue){
+			case 'name':
+				return newInput.name = value
+			case 'startDate':
+				return newInput.startDate = value
+			case 'finishDate':
+				return newInput.finishDate = value
+			default: return newInput
+		}
 	}
 
 	const handleChange = (e) => {
-		const value = e.currentTarget.value
-		const newInput = {}
-		
-		if(e.currentTarget.id === 'name') newInput.name = value
-			else newInput.name = userInput.name
-		if(e.currentTarget.id === 'startDate') newInput.startDate = value
-			else newInput.startDate = userInput.startDate
-		if(e.currentTarget.id === 'finishDate') newInput.finishDate = value
-			else newInput.finishDate = userInput.finishDate
-
+		const newInput = updateInput(
+			e.currentTarget.id,
+			e.currentTarget.value
+		)
 		setUserInput(newInput)
 	}
 
