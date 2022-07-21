@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ProgressBar/static/css/main.1ca5ae20.css",
-    "main.js": "/ProgressBar/static/js/main.b03f79cb.js",
+    "main.js": "/ProgressBar/static/js/main.acbe0adf.js",
     "index.html": "/ProgressBar/index.html",
     "main.1ca5ae20.css.map": "/ProgressBar/static/css/main.1ca5ae20.css.map",
-    "main.b03f79cb.js.map": "/ProgressBar/static/js/main.b03f79cb.js.map"
+    "main.acbe0adf.js.map": "/ProgressBar/static/js/main.acbe0adf.js.map"
   },
   "entrypoints": [
     "static/css/main.1ca5ae20.css",
-    "static/js/main.b03f79cb.js"
+    "static/js/main.acbe0adf.js"
   ]
 }
