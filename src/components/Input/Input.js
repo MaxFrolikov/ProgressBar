@@ -20,8 +20,6 @@ export const Input = () => {
 		finishDate: '',
 	}
 
-	console.log()
-
 	const [userInput, setUserInput] = useState(initialUserInput)
 
 	const bar = {
